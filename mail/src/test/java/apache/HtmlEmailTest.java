@@ -18,7 +18,7 @@ public class HtmlEmailTest {
         htmlEmail = new HtmlEmail();
         htmlEmail.setCharset("UTF-8"); // 设置邮件编码，否则有可能乱码
         htmlEmail.setHostName("SMTP.163.com"); // SMTP 发送服务器
-        htmlEmail.setAuthentication("xf616510229@163.com", "xiangfan521"); // 验证信息，用户名/密码（授权码）
+        htmlEmail.setAuthentication("xf616510229@163.com", "xxxx"); // 验证信息，用户名/密码（授权码）
         htmlEmail.setFrom("xf616510229@163.com", "Feathers"); // 设置发件人
         htmlEmail.addTo("616510229@qq.com"); // 添加收件人，可以多个
         htmlEmail.addCc("xf616510229@163.com"); // 添加抄送人，可以多个， 如果163返回554 DT:SPM，可以抄送自己一份

@@ -17,7 +17,7 @@ public class SimpleEmailTest {
         simpleEmail = new SimpleEmail();
         simpleEmail.setCharset("UTF-8"); // 设置邮件编码，否则有可能乱码
         simpleEmail.setHostName("SMTP.163.com"); // SMTP 发送服务器
-        simpleEmail.setAuthentication("xf616510229@163.com", "xiangfan521"); // 验证信息，用户名/密码（授权码）
+        simpleEmail.setAuthentication("xf616510229@163.com", "xxxxx"); // 验证信息，用户名/密码（授权码）
         simpleEmail.setFrom("xf616510229@163.com", "Feathers"); // 设置发件人
         simpleEmail.addTo("616510229@qq.com"); // 添加收件人，可以多个
         simpleEmail.addCc("yangsx@c-platform.com"); // 添加抄送人，可以多个
