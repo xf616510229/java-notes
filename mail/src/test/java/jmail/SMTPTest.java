@@ -2,10 +2,14 @@ package jmail;
 
 import org.junit.Test;
 
+import javax.mail.Message;
+import javax.mail.Multipart;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 import java.util.Date;
 import java.util.Properties;
 
@@ -82,5 +86,57 @@ public class SMTPTest {
         transport.sendMessage(message, message.getAllRecipients());
         // 关闭连接
         transport.close();
+    }
+
+    @Test
+    public void sendMultiPartMail() throws Exception {
+        // 使用配置获取session对象
+        Session session = Session.getDefaultInstance(props);
+
+        // 创建消息对象，用于发送 MimeMessage
+        MimeMessage message = new MimeMessage(session);
+        // 设置发件人
+        message.setFrom(new InternetAddress(FROM));
+        // 设置收件人地址，可以设置多个收件人
+        InternetAddress[] internetAddresses = new InternetAddress[]{
+                new InternetAddress(TO)
+        };
+        // RecipientType.to 主要接收人
+        // RecipientType.CC 抄送人
+        // RecipientType.BCC 秘密抄送人
+        message.addRecipients(Message.RecipientType.TO, internetAddresses);
+        // 设置邮件主题
+        message.setSubject("我是邮件主题");
+        // 设置邮件发送日期
+        message.setSentDate(new Date());
+        // 设置邮件正文内容
+        message.setText("我是邮件正文内容");
+        // 保存邮件最终内容
+        message.saveChanges();
+
+        MimeBodyPart mbp1 = new MimeBodyPart();
+        mbp1.setText("我是附件");
+        // 把前面定义的msgText中的文字设定为邮件正文的内容
+        MimeBodyPart mbp2 = new MimeBodyPart();
+        mbp2.setText("actt", "utf-8");
+        // 创建附件部分
+        Multipart mp = new MimeMultipart();
+        // 创建Multipart
+        mp.addBodyPart(mbp1);
+        mp.addBodyPart(mbp2);
+        // 把前面定义的正文和附件都添加到Multipart中
+        message.setContent(mp);
+        // 添加 Multipart到Message中
+
+        // 获得Transport实例对象
+        Transport transport = session.getTransport();
+        // 打开连接
+        transport.connect("user01", "user01");
+
+        // 将message对象传递给transport对象，将邮件发送出去
+//        Transport.send(message,message.getAllRecipients());
+        transport.sendMessage(message, message.getAllRecipients());
+
+        System.out.println("message is OK");
     }
 }
