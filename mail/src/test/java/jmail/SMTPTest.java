@@ -1,4 +1,4 @@
-package send;
+package jmail;
 
 import org.junit.Test;
 
