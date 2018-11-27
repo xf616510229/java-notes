@@ -1,0 +1,353 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>1. 前言 - Excelg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\bootstrap.min.css">
+    <link rel="stylesheet" href="css\font-awesome.min.css">
+    <link rel="stylesheet" href="css\highlight.css">
+    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css\my.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <i class="fa fa-bars sidebar-toggle"></i>
+        <span class="title"><a href="index.html">Excelg</a></span>
+      </div>
+      <div class="sidebar">
+        <ul>
+          <li class="numbered visible"><a href="index.html" data-alt-hash="id-6a07a7a6a8d23876a3a1609324a854548d17b3dd"><span class="number">1.</span>前言</a></li>
+          <li class="numbered visible"><a href="index.html#excel"><span class="number">2.</span>Excel表名词解释</a></li>
+          <li class="numbered visible"><a href="index.html#id-9f2fce8d43afe3ce16d13706a867754fc6bf48cb"><span class="number">3.</span>开源框架</a></li>
+          <li class="numbered visible">
+            <a href="index.html#jxl"><span class="number">4.</span>使用JXL</a>
+            <ul>
+              <li class="numbered visible"><a href="index.html#id-0b8d5ab80c02a9cfa760702f83398054f3302228"><span class="number">4.1.</span>添加依赖</a></li>
+              <li class="numbered visible"><a href="index.html#id-c602a3c802ff12f9f5a14523a6eeef037a9b36d3"><span class="number">4.2.</span>简述</a></li>
+              <li class="numbered visible">
+                <a href="index.html#id-163a61d71b01baac591bd0701806bb0497dcb18f"><span class="number">4.3.</span>读取Excel</a>
+                <ul>
+                  <li class="numbered visible"><a href="index.html#id-f9aed3ec10803fc0971ebbb5f8eb4bb3b52684f8"><span class="number">4.3.1.</span>读取工作簿</a></li>
+                  <li class="numbered visible"><a href="index.html#id-9acafc0ccafcb145c19518ebbd3acdc377df8e91"><span class="number">4.3.2.</span>读取工作表</a></li>
+                  <li class="numbered visible"><a href="index.html#id-78dd507d4a1d5b953b1d9c167f0df86d212019f5"><span class="number">4.3.3.</span>读取单元格</a></li>
+                  <li class="numbered visible"><a href="index.html#id-ab4f26ca3a77750b01062c4c07c53a82c47d60f7"><span class="number">4.3.4.</span>释放资源</a></li>
+                </ul>
+              </li>
+              <li class="numbered visible">
+                <a href="index.html#id-b3ddee0d68a793b4789d7dd32a98745c4bba9a80"><span class="number">4.4.</span>写入Excel</a>
+                <ul>
+                  <li class="numbered visible"><a href="index.html#id-23a8a8e8689a5f4f5d4455c5111e8d268b4241e8"><span class="number">4.4.1.</span>创建工作簿</a></li>
+                  <li class="numbered visible"><a href="index.html#id-7d0150cd456718399563997e00ee2a614c7840df"><span class="number">4.4.2.</span>创建工作表</a></li>
+                  <li class="numbered visible"><a href="index.html#id-ed9c143a730e69394be41e650aad6dc2240ea973"><span class="number">4.4.3.</span>创建单元格</a></li>
+                  <li class="numbered visible"><a href="index.html#id-c70351379c440a4b9762ae68a89413f2b38c6db4"><span class="number">4.4.4.</span>写入释放</a></li>
+                </ul>
+              </li>
+              <li class="numbered visible"><a href="index.html#api"><span class="number">4.5.</span>其他常用API</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="index.html#poi"><span class="number">5.</span>使用POI</a>
+            <ul>
+              <li class="numbered visible"><a href="index.html#id-884642f1d704cddd707ae950d1fe6dea71a663a7"><span class="number">5.1.</span>添加依赖</a></li>
+              <li class="numbered visible"><a href="index.html#id-57c9fce8b1c00e62dd26b13bce646e5f110f84d0"><span class="number">5.2.</span>简述</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <div class="content-handle"></div>
+        <div class="content-container">
+          <div class="content-nav content-nav-top">
+          </div>
+          <div class="page-toc">
+            <ul>
+              <li class="numbered visible"><a href="#id-6a07a7a6a8d23876a3a1609324a854548d17b3dd"><span class="number">1.</span>前言</a></li>
+              <li class="numbered visible"><a href="#excel"><span class="number">2.</span>Excel表名词解释</a></li>
+              <li class="numbered visible"><a href="#id-9f2fce8d43afe3ce16d13706a867754fc6bf48cb"><span class="number">3.</span>开源框架</a></li>
+              <li class="numbered visible">
+                <a href="#jxl"><span class="number">4.</span>使用JXL</a>
+                <ul>
+                  <li class="numbered visible"><a href="#id-0b8d5ab80c02a9cfa760702f83398054f3302228"><span class="number">4.1.</span>添加依赖</a></li>
+                  <li class="numbered visible"><a href="#id-c602a3c802ff12f9f5a14523a6eeef037a9b36d3"><span class="number">4.2.</span>简述</a></li>
+                  <li class="numbered visible">
+                    <a href="#id-163a61d71b01baac591bd0701806bb0497dcb18f"><span class="number">4.3.</span>读取Excel</a>
+                    <ul>
+                      <li class="numbered visible"><a href="#id-f9aed3ec10803fc0971ebbb5f8eb4bb3b52684f8"><span class="number">4.3.1.</span>读取工作簿</a></li>
+                      <li class="numbered visible"><a href="#id-9acafc0ccafcb145c19518ebbd3acdc377df8e91"><span class="number">4.3.2.</span>读取工作表</a></li>
+                      <li class="numbered visible"><a href="#id-78dd507d4a1d5b953b1d9c167f0df86d212019f5"><span class="number">4.3.3.</span>读取单元格</a></li>
+                      <li class="numbered visible"><a href="#id-ab4f26ca3a77750b01062c4c07c53a82c47d60f7"><span class="number">4.3.4.</span>释放资源</a></li>
+                    </ul>
+                  </li>
+                  <li class="numbered visible">
+                    <a href="#id-b3ddee0d68a793b4789d7dd32a98745c4bba9a80"><span class="number">4.4.</span>写入Excel</a>
+                    <ul>
+                      <li class="numbered visible"><a href="#id-23a8a8e8689a5f4f5d4455c5111e8d268b4241e8"><span class="number">4.4.1.</span>创建工作簿</a></li>
+                      <li class="numbered visible"><a href="#id-7d0150cd456718399563997e00ee2a614c7840df"><span class="number">4.4.2.</span>创建工作表</a></li>
+                      <li class="numbered visible"><a href="#id-ed9c143a730e69394be41e650aad6dc2240ea973"><span class="number">4.4.3.</span>创建单元格</a></li>
+                      <li class="numbered visible"><a href="#id-c70351379c440a4b9762ae68a89413f2b38c6db4"><span class="number">4.4.4.</span>写入释放</a></li>
+                    </ul>
+                  </li>
+                  <li class="numbered visible"><a href="#api"><span class="number">4.5.</span>其他常用API</a></li>
+                </ul>
+              </li>
+              <li class="numbered visible">
+                <a href="#poi"><span class="number">5.</span>使用POI</a>
+                <ul>
+                  <li class="numbered visible"><a href="#id-884642f1d704cddd707ae950d1fe6dea71a663a7"><span class="number">5.1.</span>添加依赖</a></li>
+                  <li class="numbered visible"><a href="#id-57c9fce8b1c00e62dd26b13bce646e5f110f84d0"><span class="number">5.2.</span>简述</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="main-content">
+            <h1 id="id-6a07a7a6a8d23876a3a1609324a854548d17b3dd"><span class="number">1.</span>前言</h1>
+            <p>@author:<a href="http://feathers.me">Feathers</a></p>
+            <p>@email:<a href="mailto:&#54;&#49;6&#53;1&#x30;&#50;&#x32;&#x39;&#64;&#113;q&#x2e;&#x63;o&#109;">&#54;&#49;6&#53;1&#x30;&#50;&#x32;&#x39;&#64;&#113;q&#x2e;&#x63;o&#109;</a></p>
+            <p>使用java生成Excel表，或者读取Excel表</p>
+            <h1 id="excel"><span class="number">2.</span>Excel表名词解释</h1>
+            <ul>
+              <li>
+                <p>工作簿 workbook</p>
+              </li>
+              <li>
+                <p>工作表 sheet</p>
+              </li>
+              <li>
+                <p>单元格 cell</p>
+              </li>
+            </ul>
+            <p>​</p>
+            <h1 id="id-9f2fce8d43afe3ce16d13706a867754fc6bf48cb"><span class="number">3.</span>开源框架</h1>
+            <p>目前可以完成Excel相关操作的Java框架主要有韩国的**jExcelAPI**(即jxl)以及Apache的**POI**框架</p>
+            <p>JXL支持比较低版本的excel，比如Excel 95 ,97 ,2000，2003 </p>
+            <p>由于Excel版本比较低，导致最大行有限制，无法导出65535以上量级的数据 对于内存，和时间的花费也比POI基于内存+磁盘的方式高。</p>
+            <p>JXL技术说明 </p>
+            <ol>
+              <li>读取Excel公式（可以读取Excel 97以后的公式）</li>
+              <li>生成Excel数据表（格式为Excel 97）</li>
+              <li>
+                <p>支持字体、数字、日期的格式化 </p>
+              </li>
+              <li>支持单元格的阴影操作，以及颜色操作</li>
+            </ol>
+            <ol>
+              <li>修改已经存在的数据表</li>
+              <li>是最基础的excel api</li>
+            </ol>
+            <ol>
+              <li>小文件读取效率比较高</li>
+              <li>跨平台</li>
+            </ol>
+            <p>POI技术说明</p>
+            <ol>
+              <li>能保持Excel里原有的宏（但不能用它写新的宏）。</li>
+              <li>不支持跨平台（主要就是Java语言）</li>
+              <li>在一些业务场景中代码相对复杂，但是API丰富，支持多种模式的读写。</li>
+              <li>支持比较新版本的excel.</li>
+              <li>读写的时候比较占内存。</li>
+              <li>读写的时候比较占内存。</li>
+              <li>支持大数量大文件的读写操作。但是需要熟悉API。</li>
+            </ol>
+            <p>总体来说，对于简单的单表excel导入导出的需求，建议使用JXL。数据量稍微小点，占用内存少，速度快。 对于报表类的，涉及月份数据量，多表数据聚合在一起建议使用POI。</p>
+            <h1 id="jxl"><span class="number">4.</span>使用JXL</h1>
+            <h2 id="id-0b8d5ab80c02a9cfa760702f83398054f3302228"><span class="number">4.1.</span>添加依赖</h2>
+            <p>maven repository 搜索关键词 JXL</p>
+            <pre><code class="xml">&lt;dependency&gt;
+    &lt;groupId&gt;net.sourceforge.jexcelapi&lt;/groupId&gt;
+    &lt;artifactId&gt;jxl&lt;/artifactId&gt;
+    &lt;version&gt;2.6.12&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+            <h2 id="id-c602a3c802ff12f9f5a14523a6eeef037a9b36d3"><span class="number">4.2.</span>简述</h2>
+            <p>一个excel就对应一个Workbook对象，（Wookbook中含有许多静态方法，所以他也是一个工具类） 一个Workbook可以有多个Sheet对象 一个Sheet对象可以有多个Cell对象</p>
+            <h2 id="id-163a61d71b01baac591bd0701806bb0497dcb18f"><span class="number">4.3.</span>读取Excel</h2>
+            <p>通过Workbook，Sheet ，Cell这三个对象我们就可以实现Excel文件的读取工作。我们先想想一下读取步骤，不管是什么样的Excel操作框架必定都要经历</p>
+            <ol>
+              <li>选取Excel文件得到工作薄</li>
+              <li>选择工作表</li>
+              <li>选择Cell</li>
+              <li>读取信息</li>
+            </ol>
+            <h3 id="id-f9aed3ec10803fc0971ebbb5f8eb4bb3b52684f8"><span class="number">4.3.1.</span>读取工作簿</h3>
+            <pre><code class="java">// 1. 使用工具类Workbook工具类，传入目标文件，获取工作簿
+Workbook workbook = Workbook.getWorkbook(new File(&quot;D:\\exceldemo\\&quot;, &quot;test.xls&quot;));
+// 2. 使用文件流读取，然后交给Workbook工具类处理
+InputStream in = new BufferedInputStream(new FileInputStream(file));
+Workbook workbook1 = Workbook.getWorkbook(in);
+// 3. 还有两种构造可以传入WorkbookSettings, 比如setEncode可以设置工作簿编码
+Workbook.getWorkbook(file, ws);
+Workbook.getWorkbook(in, ws);
+</code></pre>
+            <h3 id="id-9acafc0ccafcb145c19518ebbd3acdc377df8e91"><span class="number">4.3.2.</span>读取工作表</h3>
+            <pre><code class="java">// 获取工作簿下的所有工作表
+Sheet[] sheets = workbook.getSheets();
+// 获取第一个工作表
+Sheet sheet = workbook.getSheet(0);
+// 获取名称为工作表一的工作表
+Sheet 工作表1 = workbook.getSheet(&quot;工作表1&quot;);
+</code></pre>
+            <h3 id="id-78dd507d4a1d5b953b1d9c167f0df86d212019f5"><span class="number">4.3.3.</span>读取单元格</h3>
+            <pre><code class="java">// 获取3行2列单元格
+Cell cell = sheet.getCell(2, 1);
+
+// 获取单元格的值
+String contents = cell.getContents();
+// 获取单元格的类型 
+CellType type = cell.getType();
+</code></pre>
+            <p><strong>单元格类型：</strong></p>
+            <pre><code class="nohighlight">EMPTY 空
+LABEL 字符
+NUMBER 数字
+BOOLEAN 布尔
+ERROR 错误
+NUMBER_FORMULA 数值公式
+DATE_FORMULA 日期公式
+STRING_FORMULA 线性公式
+BOOLEAN_FORMULA 布尔表达式
+FORMULA_ERROR 公式错误
+DATE 日期
+
+除此之外，还提供了Cell的子类，LabelCell，NumberCell，DateCell，分别表示字符单元格，数值单元格和日期单元格
+</code></pre>
+            <h3 id="id-ab4f26ca3a77750b01062c4c07c53a82c47d60f7"><span class="number">4.3.4.</span>释放资源</h3>
+            <pre><code class="java"> workbook.close();
+</code></pre>
+            <p>当你完成对Excel电子表格数据的处理后，一定要使用close()方法来关闭先前创建的对象，以释放读取数据表的过程中所占用的内存空间，在读取大量数据时显得尤为重要。</p>
+            <h2 id="id-b3ddee0d68a793b4789d7dd32a98745c4bba9a80"><span class="number">4.4.</span>写入Excel</h2>
+            <p>通过WritableWorkbook，WritableSheet，Label这三个对象我们就可以实现Excel文件的插入工作。我们先想想一下插入，不管是什么样的Excel操作框架必定都要经历</p>
+            <ol>
+              <li>创建Exce工作薄</li>
+              <li>创建工作表</li>
+              <li>创建单元格</li>
+            </ol>
+            <h3 id="id-23a8a8e8689a5f4f5d4455c5111e8d268b4241e8"><span class="number">4.4.1.</span>创建工作簿</h3>
+            <p>API提供了两种方式来处理可写入的输出流，</p>
+            <ul>
+              <li>一直接生成本地文件，如果文件名不带全路径的话，缺省的文件会定位在当前目录，如果文件名带有全路径的话，则生成的Excel文件则会定位在相应的目录；</li>
+              <li>将Excel对象直接写入到输出流，例如：用户通过浏览器来访问web服务器，如果HTTP头设置正确的话，浏览器自动调用客户端的Excel应用程序，来显示动态生成的Excel电子表格。</li>
+            </ul>
+            <p><strong>创建可以写入的Excel工作簿</strong>：</p>
+            <pre><code class="java">// 1. 写入到本地文件中
+WritableWorkbook workbook = Workbook.createWorkbook(new File(&quot;D:\\exceldemo\\&quot;, &quot;test.xls&quot;));
+// 写入到本地文件中，加上workSettings
+Workbook.createWorkbook(new File(&quot;D:\\exceldemo\\&quot;, &quot;test.xls&quot;), ws);
+
+// 2. 写入到输出流中，web环境下使用
+OutputStream outputStream = new FileOutputStream(new File(&quot;D:\\exceldemo\\&quot;, &quot;test.xls&quot;));
+WritableWorkbook workbook3 = Workbook.createWorkbook(outputStream, ws);
+</code></pre>
+            <h3 id="id-7d0150cd456718399563997e00ee2a614c7840df"><span class="number">4.4.2.</span>创建工作表</h3>
+            <pre><code class="java"> WritableSheet 工作表1 = workbook3.createSheet(&quot;工作表1&quot;, 0);
+</code></pre>
+            <h3 id="id-ed9c143a730e69394be41e650aad6dc2240ea973"><span class="number">4.4.3.</span>创建单元格</h3>
+            <pre><code class="java">// 1. 创建字符单元格对象
+Label labelC = new Label(0, 0, &quot;This is a Label cell&quot;);
+工作表1.addCell(labelC);
+
+// 2. 创建有格式字符单元格对象
+// 定义字体
+WritableFont font = new WritableFont(
+  	WritableFont.ARIAL,  // 字体Arial
+  	10,WritableFont.NO_BOLD, // 不加粗
+  	false, 
+  	UnderlineStyle.NO_UNDERLINE, // 无下划线
+  	jxl.format.Colour.RED); // 字体颜色红色
+// 使用改字体定义一个单元格格式化对象
+WritableCellFormat wcfF = new WritableCellFormat(font);
+// 使用格式化对象定义一个单元格
+Label labelCF = new Label(1, 0, &quot;This is a formatting cell&quot;, wcfF);
+工作表1.addCell(labelCF);
+
+
+// 3. 创建数字类型单元格对象
+jxl.write.Number labelN = new jxl.write.Number(0, 1, 3.1415926);
+工作表1.addCell(labelN);
+
+// 4. 创建有格式数值单元格对象
+NumberFormat nf = new NumberFormat(&quot;#.##&quot;); // 保留两位小数
+WritableCellFormat wcfN = new WritableCellFormat(nf);
+jxl.write.Number labelNF = new jxl.write.Number(1, 1, 3.1415926, wcfN);
+工作表1.addCell(labelNF);
+
+// 5. 添加boolen对象
+jxl.write.Boolean labelB = new jxl.write.Boolean(0, 2, false);
+工作表1.addCell(labelB);
+
+// 6. 添加DateTime单元格对象，日期时间类型
+DateTime labelDT = new DateTime(0, 3, new java.util.Date());
+工作表1.addCell(labelDT);
+
+// 7. 添加格式化的DateTime对象
+DateFormat df = new DateFormat(&quot;dd MM yyyy hh:mm:ss&quot;);
+WritableCellFormat wcfDF = new WritableCellFormat(df);
+DateTime labelDTF = new DateTime(1, 3, new Date(), wcfDF);
+工作表1.addCell(labelDTF);
+
+// 8. 添加图像（只支持png）  10 10 代表 width 和 height
+WritableImage wrimage=new WritableImage(1,4,10,10,new File(imageFilepath));
+工作表1.addImage(wrimage);
+</code></pre>
+            <p>合并单元格：</p>
+            <pre><code class="java">// 合并1行6列 到 4行8列 之间的所有单元格，按照点来计算的 
+工作表1.mergeCells(0, 6, 3, 8);
+label = new Label(0, 6, &quot;合并了12个单元格&quot;);
+工作表1.addCell(label);
+</code></pre>
+            <p>添加单元格样式：</p>
+            <pre><code class="java">WritableCellFormat wc = new WritableCellFormat();
+wc.setAlignment(Alignment.CENTRE); // 设置居中
+wc.setBorder(Border.ALL, BorderLineStyle.THIN); // 设置边框线
+wc.setBackground(jxl.format.Colour.RED); // 设置单元格的背景颜色
+Label label = new Label(1, 5, &quot;字体&quot;, wc);
+工作表1.addCell(label);
+</code></pre>
+            <h3 id="id-c70351379c440a4b9762ae68a89413f2b38c6db4"><span class="number">4.4.4.</span>写入释放</h3>
+            <pre><code class="nohighlight">workbook.write();
+workbook.close();
+</code></pre>
+            <h2 id="api"><span class="number">4.5.</span>其他常用API</h2>
+            <p>Workbook类提供的方法</p>
+            <ul>
+              <li><code>int getNumberOfSheets()</code> 获取工作表的总个数</li>
+              <li><code>Sheet[] getSheets()</code> 获取数组型的工作表</li>
+              <li><code>Sheet getSheet(String name);</code> //得到此对应名称的工作表</li>
+            </ul>
+            <p>Sheet接口提供的方法</p>
+            <ul>
+              <li><code>String getName()</code> 获取工作表的名称</li>
+              <li><code>int getColumns()</code> 获取Sheet表中所包含的总列数</li>
+              <li><code>Cell[] getColumn(int column)</code> 获取某一列的所有单元格，返回的是单元格对象数组</li>
+              <li><code>int getRows()</code> 获取Sheet表中所包含的总行数</li>
+              <li><code>Cell[] getRow(int row)</code> 获取某一行的所有单元格，返回的是单元格对象数组</li>
+              <li><code>Cell getCell(int column, int row)</code>获取指定单元格的对象引用，需要注意的是它的两个参数，第一个是列数，第二个是行数，这与通常的行、列组合有些不同</li>
+              <li><code>WritableSheet.setRowView(int i,int height);</code>指定第i+1行的高度</li>
+              <li><code>WritableSheet.setColumnView(int i,int width);</code> 指定第i+1列的宽度</li>
+            </ul>
+            <h1 id="poi"><span class="number">5.</span>使用POI</h1>
+            <h2 id="id-884642f1d704cddd707ae950d1fe6dea71a663a7"><span class="number">5.1.</span>添加依赖</h2>
+            <p>maven repository 搜索关键词 POI</p>
+            <pre><code class="xml">&lt;!-- https://mvnrepository.com/artifact/org.apache.poi/poi --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;
+    &lt;artifactId&gt;poi&lt;/artifactId&gt;
+    &lt;version&gt;3.15&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+            <h2 id="id-57c9fce8b1c00e62dd26b13bce646e5f110f84d0"><span class="number">5.2.</span>简述</h2>
+          </div>
+          <div class="content-nav content-nav-bottom">
+          </div>
+          <div class="footer">
+            <p class="credit text-muted">Powered by <a href="https://github.com/kobo/gaiden">Gaiden</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js\jquery-2.1.1.min.js"></script>
+    <script src="js\highlight.js"></script>
+    <script src="js\application.js"></script>
+    <script src="js\my.js"></script>
+  </body>
+</html>

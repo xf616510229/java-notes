@@ -18,6 +18,7 @@
         <module>lang3</module>
         <module>json</module>
         <module>memcached</module>
+        <module>execl</module>
     </modules>
 
     <properties>
