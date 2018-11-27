@@ -1,0 +1,547 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>1. 前言 - Memcahced</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\bootstrap.min.css">
+    <link rel="stylesheet" href="css\font-awesome.min.css">
+    <link rel="stylesheet" href="css\highlight.css">
+    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css\my.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <i class="fa fa-bars sidebar-toggle"></i>
+        <span class="title"><a href="index.html">Memcahced</a></span>
+      </div>
+      <div class="sidebar">
+        <ul>
+          <li class="numbered visible"><a href="index.html" data-alt-hash="id-6a07a7a6a8d23876a3a1609324a854548d17b3dd"><span class="number">1.</span>前言</a></li>
+          <li class="numbered visible"><a href="index.html#memcahce"><span class="number">2.</span>Memcahce简介</a></li>
+          <li class="numbered visible"><a href="index.html#id-f9491b4a7e3b9c5990dc7ba078483da91963b44e"><span class="number">3.</span>配置环境</a></li>
+          <li class="numbered visible">
+            <a href="index.html#memcached"><span class="number">4.</span>使用memcached</a>
+            <ul>
+              <li class="numbered visible"><a href="index.html#set"><span class="number">4.1.</span>set</a></li>
+              <li class="numbered visible"><a href="index.html#add"><span class="number">4.2.</span>add</a></li>
+              <li class="numbered visible"><a href="index.html#replace"><span class="number">4.3.</span>replace</a></li>
+              <li class="numbered visible"><a href="index.html#get"><span class="number">4.4.</span>get</a></li>
+              <li class="numbered visible"><a href="index.html#delete"><span class="number">4.5.</span>delete</a></li>
+              <li class="numbered visible"><a href="index.html#gets"><span class="number">4.6.</span>gets</a></li>
+              <li class="numbered visible"><a href="index.html#cas-set--"><span class="number">4.7.</span>cas (set 更新版本指示符 )</a></li>
+              <li class="numbered visible"><a href="index.html#stats"><span class="number">4.8.</span>stats</a></li>
+              <li class="numbered visible"><a href="index.html#flush_all"><span class="number">4.9.</span>flush_all</a></li>
+              <li class="numbered visible"><a href="index.html#id-a3f9cffb3c2c341f9c949fa30492d6c1e7a9964c"><span class="number">4.10.</span>缓存性能</a></li>
+              <li class="numbered visible"><a href="index.html#id-71760af60684fc3ce303e6c1179845856b7cf895"><span class="number">4.11.</span>计算缓存命中率</a></li>
+              <li class="numbered visible"><a href="index.html#id-ff99671422ac4c7fa6579b862fb00d0f5dd05f3b"><span class="number">4.12.</span>常用命令</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="index.html#spymemcached"><span class="number">5.</span>spymemcached</a>
+            <ul>
+              <li class="numbered visible"><a href="index.html#id-0f604bc9c05da557360d5f4f033b044603f742b9"><span class="number">5.1.</span>添加依赖：</a></li>
+              <li class="numbered visible"><a href="index.html#spring"><span class="number">5.2.</span>集成spring配置：</a></li>
+              <li class="numbered visible"><a href="index.html#id-8b6f6d58b48f5b7338ad824c1d15310a4a294b31"><span class="number">5.3.</span>属性详解：</a></li>
+              <li class="numbered visible"><a href="index.html#id-d2142b390a41169c81cc24f7b93b13cd64c42275"><span class="number">5.4.</span>使用示例：</a></li>
+              <li class="numbered visible"><a href="index.html#id-53926c3013f815ed7a83a8d781e783a2e9516c75"><span class="number">5.5.</span>方法参照：</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="index.html#xmemcached"><span class="number">6.</span>xmemcached</a>
+            <ul>
+              <li class="numbered visible"><a href="index.html#id-fdad608f7f5b64972535e93315c521244bc9dd5a"><span class="number">6.1.</span>添加依赖：</a></li>
+              <li class="numbered visible"><a href="index.html#id-d3a651243b7ee5e0e921847faebe52ed8f6ea60d"><span class="number">6.2.</span>集成spring配置：</a></li>
+              <li class="numbered visible"><a href="index.html#id-3ab6cd01f9edffdb29869b3db4bd3db3206f394b"><span class="number">6.3.</span>不与spring集成：</a></li>
+              <li class="numbered visible"><a href="index.html#id-9c884493677a6d2ba2dda3e37cf2b73ba06351a7"><span class="number">6.4.</span>方法参照：</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <div class="content-handle"></div>
+        <div class="content-container">
+          <div class="content-nav content-nav-top">
+          </div>
+          <div class="page-toc">
+            <ul>
+              <li class="numbered visible"><a href="#id-6a07a7a6a8d23876a3a1609324a854548d17b3dd"><span class="number">1.</span>前言</a></li>
+              <li class="numbered visible"><a href="#memcahce"><span class="number">2.</span>Memcahce简介</a></li>
+              <li class="numbered visible"><a href="#id-f9491b4a7e3b9c5990dc7ba078483da91963b44e"><span class="number">3.</span>配置环境</a></li>
+              <li class="numbered visible">
+                <a href="#memcached"><span class="number">4.</span>使用memcached</a>
+                <ul>
+                  <li class="numbered visible"><a href="#set"><span class="number">4.1.</span>set</a></li>
+                  <li class="numbered visible"><a href="#add"><span class="number">4.2.</span>add</a></li>
+                  <li class="numbered visible"><a href="#replace"><span class="number">4.3.</span>replace</a></li>
+                  <li class="numbered visible"><a href="#get"><span class="number">4.4.</span>get</a></li>
+                  <li class="numbered visible"><a href="#delete"><span class="number">4.5.</span>delete</a></li>
+                  <li class="numbered visible"><a href="#gets"><span class="number">4.6.</span>gets</a></li>
+                  <li class="numbered visible"><a href="#cas-set--"><span class="number">4.7.</span>cas (set 更新版本指示符 )</a></li>
+                  <li class="numbered visible"><a href="#stats"><span class="number">4.8.</span>stats</a></li>
+                  <li class="numbered visible"><a href="#flush_all"><span class="number">4.9.</span>flush_all</a></li>
+                  <li class="numbered visible"><a href="#id-a3f9cffb3c2c341f9c949fa30492d6c1e7a9964c"><span class="number">4.10.</span>缓存性能</a></li>
+                  <li class="numbered visible"><a href="#id-71760af60684fc3ce303e6c1179845856b7cf895"><span class="number">4.11.</span>计算缓存命中率</a></li>
+                  <li class="numbered visible"><a href="#id-ff99671422ac4c7fa6579b862fb00d0f5dd05f3b"><span class="number">4.12.</span>常用命令</a></li>
+                </ul>
+              </li>
+              <li class="numbered visible">
+                <a href="#spymemcached"><span class="number">5.</span>spymemcached</a>
+                <ul>
+                  <li class="numbered visible"><a href="#id-0f604bc9c05da557360d5f4f033b044603f742b9"><span class="number">5.1.</span>添加依赖：</a></li>
+                  <li class="numbered visible"><a href="#spring"><span class="number">5.2.</span>集成spring配置：</a></li>
+                  <li class="numbered visible"><a href="#id-8b6f6d58b48f5b7338ad824c1d15310a4a294b31"><span class="number">5.3.</span>属性详解：</a></li>
+                  <li class="numbered visible"><a href="#id-d2142b390a41169c81cc24f7b93b13cd64c42275"><span class="number">5.4.</span>使用示例：</a></li>
+                  <li class="numbered visible"><a href="#id-53926c3013f815ed7a83a8d781e783a2e9516c75"><span class="number">5.5.</span>方法参照：</a></li>
+                </ul>
+              </li>
+              <li class="numbered visible">
+                <a href="#xmemcached"><span class="number">6.</span>xmemcached</a>
+                <ul>
+                  <li class="numbered visible"><a href="#id-fdad608f7f5b64972535e93315c521244bc9dd5a"><span class="number">6.1.</span>添加依赖：</a></li>
+                  <li class="numbered visible"><a href="#id-d3a651243b7ee5e0e921847faebe52ed8f6ea60d"><span class="number">6.2.</span>集成spring配置：</a></li>
+                  <li class="numbered visible"><a href="#id-3ab6cd01f9edffdb29869b3db4bd3db3206f394b"><span class="number">6.3.</span>不与spring集成：</a></li>
+                  <li class="numbered visible"><a href="#id-9c884493677a6d2ba2dda3e37cf2b73ba06351a7"><span class="number">6.4.</span>方法参照：</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="main-content">
+            <h1 id="id-6a07a7a6a8d23876a3a1609324a854548d17b3dd"><span class="number">1.</span>前言</h1>
+            <p>@author: <a href="http://feathers.me">Feathers</a></p>
+            <p>@email: <a href="mailto:&#54;&#49;6&#53;1&#x30;&#50;&#x32;&#x39;&#64;&#113;q&#x2e;&#x63;o&#109;">&#54;&#49;6&#53;1&#x30;&#50;&#x32;&#x39;&#64;&#113;q&#x2e;&#x63;o&#109;</a></p>
+            <p>整理了memcached的相关笔记，以及常见的几种java client的使用方式</p>
+            <p>对应代码：https://github.com/xf616510229/memcached</p>
+            <h1 id="memcahce"><span class="number">2.</span>Memcahce简介</h1>
+            <p>memcache是一套分布式的高速缓存系统，由LiveJournal的Brad Fitzpatrick开发，但目前被许多网站使用以提升网站的访问速度，尤其对于一些大型的、需要频繁访问数据库的网站访问速度提升效果十分显著。这是一套开放源代码软件，以BSD license授权发布。</p>
+            <p>MemCache的工作流程如下：先检查客户端的请求数据是否在memcached中，如有，直接把请求数据返回，不再对数据库进行任何操作；如果请求的数据不在memcached中，就去查数据库，把从数据库中获取的数据返回给客户端，同时把数据缓存一份到memcached中（memcached客户端不负责，需要程序明确实现）；每次更新数据库的同时更新memcached中的数据，保证一致性；当分配给memcached内存空间用完之后，会使用LRU（Least Recently Used，最近最少使用）策略加上到期失效策略，失效数据首先被替换，然后再替换掉最近未使用的数据。</p>
+            <p>Memcache是一个高性能的分布式的内存对象缓存系统，通过在内存里维护一个统一的巨大的hash表，它能够用来存储各种格式的数据，包括图像、视频、文件以及数据库检索的结果等。简单的说就是将数据调用到内存中，然后从内存中读取，从而大大提高读取速度。</p>
+            <p>Memcached是以守护程序(监听)方式运行于一个或多个服务器中，随时会接收客户端的连接和操作。</p>
+            <h1 id="id-f9491b4a7e3b9c5990dc7ba078483da91963b44e"><span class="number">3.</span>配置环境</h1>
+            <p>centos下安装memcached：</p>
+            <blockquote>
+              <p>安装：<code>yum install memcached</code></p>
+              <p>启动： <code>/usr/bin/memcached -d -l 127.0.0.1 -p 11211 -m 150 -u root</code></p>
+              <p>启动服务：<code>service start memcached</code></p>
+              <p>telnet连接：telnet 127.0.0.1 11211</p>
+              <p>telnet安装：</p>
+              <p><code>yum install telnet</code></p>
+              <p><code>yum install telnet-server</code></p>
+            </blockquote>
+            <p>windows下安装memcached：http://blog.csdn.net/l1028386804/article/details/61417166</p>
+            <p>windows下安装telnet：</p>
+            <blockquote>
+              <p>打开或关闭windows功能，勾选telnet相关选项</p>
+            </blockquote>
+            <h1 id="memcached"><span class="number">4.</span>使用memcached</h1>
+            <p><strong>修改命令语法</strong>:</p>
+            <pre><code class="nohighlight">command &lt;key&gt; &lt;flags&gt; &lt;expiration time&gt; &lt;bytes&gt; // 空一行
+&lt;value&gt;
+</code></pre>
+            <p>表 1 定义了 memcached 修改命令的参数和用法。</p>
+            <p><strong>表 1. memcached 修改命令参数</strong></p>
+            <table>
+              <thead>
+                <tr>
+                  <th>参数 </th>
+                  <th>用法 </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>key </td>
+                  <td>key 用于查找缓存值 </td>
+                </tr>
+                <tr>
+                  <td>flags </td>
+                  <td>可以包括键值对的整型参数，客户机使用它存储关于键值对的额外信息 </td>
+                </tr>
+                <tr>
+                  <td>expiration time </td>
+                  <td>在缓存中保存键值对的时间长度（以秒为单位，0 表示永远） </td>
+                </tr>
+                <tr>
+                  <td>bytes </td>
+                  <td>在缓存中存储的字节点 </td>
+                </tr>
+                <tr>
+                  <td>value </td>
+                  <td>存储的值（始终位于第二行） </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>现在，我们来看看这些命令的实际使用。</p>
+            <h2 id="set"><span class="number">4.1.</span>set</h2>
+            <p><code>set</code> 命令用于向缓存添加新的键值对。如果键已经存在，则之前的值将被替换。</p>
+            <p>注意以下交互，它使用了 <code>set</code> 命令：</p>
+            <pre><code class="nohighlight">set userId 0 0 5
+12345
+STORED
+</code></pre>
+            <p>如果使用 <code>set</code> 命令正确设定了键值对，服务器将使用单词 <strong>STORED</strong> 进行响应。本示例向缓存中添加了一个键值对，其键为 <code>userId</code>，其值为 <code>12345</code>。并将过期时间设置为 0，这将向 memcached 通知您希望将此值存储在缓存中直到删除它为止。</p>
+            <h2 id="add"><span class="number">4.2.</span>add</h2>
+            <p>仅当缓存中不存在键时，<code>add</code> 命令才会向缓存中添加一个键值对。如果缓存中已经存在键，则之前的值将仍然保持相同，并且您将获得响应 <strong>NOT_STORED</strong>。</p>
+            <p>下面是使用 <code>add</code> 命令的标准交互：</p>
+            <pre><code class="nohighlight">set userId 0 0 5
+12345
+STORED
+
+add userId 0 0 5
+55555
+NOT_STORED
+
+add companyId 0 0 3
+564
+STORED
+</code></pre>
+            <h2 id="replace"><span class="number">4.3.</span>replace</h2>
+            <p>仅当键已经存在时，<code>replace</code> 命令才会替换缓存中的键。如果缓存中不存在键，那么您将从 memcached 服务器接受到一条 <strong>NOT_STORED</strong> 响应。</p>
+            <p>下面是使用 <code>replace</code> 命令的标准交互：</p>
+            <p>``` replace accountId 0 0 5 67890 NOT_STORED</p>
+            <p>set accountId 0 0 5 67890 STORED</p>
+            <p>replace accountId 0 0 5 55555 STORED  ```</p>
+            <p>最后两个基本命令是 <code>get</code> 和 <code>delete</code>。这些命令相当容易理解，并且使用了类似的语法，如下所示：</p>
+            <p><code>command &lt;key&gt;</code></p>
+            <p>接下来看这些命令的应用。</p>
+            <h2 id="get"><span class="number">4.4.</span>get</h2>
+            <p><code>get</code>命令用于检索与之前添加的键值对相关的值。您将使用 <code>get</code>执行大多数检索操作。</p>
+            <p>下面是使用 get 命令的典型交互：</p>
+            <pre><code class="nohighlight">set userId 0 0 5
+12345
+STORED
+
+get userId
+VALUE userId 0 5
+12345
+END
+
+get bob
+END
+</code></pre>
+            <p>如您所见，<code>get</code> 命令相当简单。您使用一个键来调用 <code>get</code>，如果这个键存在于缓存中，则返回相应的值。如果不存在，则不返回任何内容。</p>
+            <h2 id="delete"><span class="number">4.5.</span>delete</h2>
+            <p>最后一个基本命令是 <code>delete</code>。<code>delete</code> 命令用于删除 memcached 中的任何现有值。您将使用一个键调用 <code>delete</code>，如果该键存在于缓存中，则删除该值。如果不存在，则返回一条 <strong>NOT_FOUND</strong> 消息。</p>
+            <p>下面是使用 <code>delete</code> 命令的客户机服务器交互：</p>
+            <pre><code class="nohighlight">set userId 0 0 5
+98765
+STORED
+
+delete bob
+NOT_FOUND
+
+delete userId
+DELETED
+
+get userId
+END
+</code></pre>
+            <p><strong>高级 memcached 客户机命令</strong></p>
+            <p>可以在 memcached 中使用的两个高级命令是 <code>gets</code> 和 <code>cas</code>。<code>gets</code> 和 <code>cas</code> 命令需要结合使用。您将使用这两个命令来确保不会将现有的名称/值对设置为新值（如果该值已经更新过）。我们来分别看看这些命令。</p>
+            <h2 id="gets"><span class="number">4.6.</span>gets</h2>
+            <p><code>gets</code> 命令的功能类似于基本的 <code>get</code> 命令。两个命令之间的差异在于，<code>gets</code> 返回的信息稍微多一些：64 位的整型值非常像名称/值对的 “版本” 标识符。</p>
+            <p>下面是使用 <code>gets</code> 命令的客户机服务器交互：</p>
+            <pre><code class="nohighlight">set userId 0 0 5
+12345
+STORED
+
+get userId
+VALUE userId 0 5
+12345
+END
+
+gets userId
+VALUE userId 0 5 4
+12345
+END
+</code></pre>
+            <p>考虑 <code>get</code> 和 <code>gets</code> 命令之间的差异。<code>gets</code> 命令将返回一个额外的值 — 在本例中是整型值 4，用于标识名称/值对。如果对此名称/值对执行另一个 <code>set</code> 命令，则 <code>gets</code>返回的额外值将会发生更改，以表明名称/值对已经被更新。清单 6 显示了一个例子：</p>
+            <h2 id="cas-set--"><span class="number">4.7.</span>cas (set 更新版本指示符 )</h2>
+            <pre><code class="nohighlight">set userId 0 0 5
+33333
+STORED
+
+gets userId
+VALUE userId 0 5 5
+33333
+END
+</code></pre>
+            <p>您看到 <code>gets</code> 返回的值了吗？它已经更新为 5。您每次修改名称/值对时，该值都会发生更改。</p>
+            <p><strong>cas</strong> <code>cas</code>（check 和 set）是一个非常便捷的 memcached 命令，用于设置名称/值对的值（如果该名称/值对在您上次执行 <code>gets</code> 后没有更新过）。它使用与 <code>set</code> 命令相类似的语法，但包括一个额外的值：<code>gets</code> 返回的额外值。</p>
+            <p>注意以下使用 <code>cas</code> 命令的交互：</p>
+            <pre><code class="nohighlight">set userId 0 0 5
+55555
+STORED
+
+gets userId
+VALUE userId 0 5 6
+55555
+END
+
+cas userId 0 0 5 6
+33333
+STORED
+</code></pre>
+            <p>如您所见，我使用额外的整型值 6 来调用 <code>gets</code> 命令，并且操作运行非常顺序。现在，我们来看看清单 7 中的一系列命令：</p>
+            <p><strong>使用旧版本指示符的 cas 命令</strong></p>
+            <pre><code class="nohighlight">set userId 0 0 5
+55555
+STORED
+
+gets userId
+VALUE userId 0 5 8
+55555
+END
+
+cas userId 0 0 5 6
+33333
+EXISTS
+</code></pre>
+            <p>注意，我并未使用 <code>gets</code> 最近返回的整型值，并且 <code>cas</code> 命令返回 EXISTS 值以示失败。从本质上说，同时使用 <code>gets</code> 和 <code>cas</code> 命令可以防止您使用自上次读取后经过更新的名称/值对。</p>
+            <p><strong>缓存管理命令</strong></p>
+            <p>最后两个 memcached 命令用于监控和清理 memcached 实例。它们是 <code>stats</code> 和 <code>flush_all</code> 命令。</p>
+            <h2 id="stats"><span class="number">4.8.</span>stats</h2>
+            <p><code>stats</code> 命令的功能正如其名：转储所连接的 memcached 实例的当前统计数据。在下例中，执行 <code>stats</code> 命令显示了关于当前 memcached 实例的信息：</p>
+            <pre><code class="nohighlight">stats
+STAT pid 63
+STAT uptime 101758
+STAT time 1248643186
+STAT version 1.4.11
+STAT pointer_size 32
+STAT rusage_user 1.177192
+STAT rusage_system 2.365370
+STAT curr_items 2
+STAT total_items 8
+STAT bytes 119
+STAT curr_connections 6
+STAT total_connections 7
+STAT connection_structures 7
+STAT cmd_get 12
+STAT cmd_set 12
+STAT get_hits 12
+STAT get_misses 0
+STAT evictions 0
+STAT bytes_read 471
+STAT bytes_written 535
+STAT limit_maxbytes 67108864
+STAT threads 4
+END
+</code></pre>
+            <p>此处的大多数输出都非常容易理解。稍后在讨论缓存性能时，我还将详细解释这些值的含义。至于目前，我们先来看看输出，然后再使用新的键来运行一些 <code>set</code> 命令，并再次运行 <code>stats</code> 命令，注意发生了哪些变化。</p>
+            <h2 id="flush_all"><span class="number">4.9.</span>flush_all</h2>
+            <p><code>flush_all</code> 是最后一个要介绍的命令。这个最简单的命令仅用于清理缓存中的所有名称/值对。如果您需要将缓存重置到干净的状态，则 <code>flush_all</code> 能提供很大的用处。下面是一个使用 <code>flush_all</code> 的例子：</p>
+            <pre><code class="nohighlight">set userId 0 0 5
+55555
+STORED
+
+get userId
+VALUE userId 0 5
+55555
+END
+
+flush_all
+OK
+
+get userId
+END
+</code></pre>
+            <h2 id="id-a3f9cffb3c2c341f9c949fa30492d6c1e7a9964c"><span class="number">4.10.</span>缓存性能</h2>
+            <p>在本文的最后，我将讨论如何使用高级 memcached 命令来确定缓存的性能。<code>stats</code> 命令用于调优缓存的使用。需要注意的两个最重要的统计数据是 et_hits 和 get_misses。这两个值分别指示找到名称/值对的次数（get_hits）和未找到名称/值对的次数（get_misses）。</p>
+            <p>结合这些值，我们可以确定缓存的利用率如何。初次启动缓存时，可以看到 get_misses 会自然地增加，但在经过一定的使用量之后，这些 get_misses 值应该会逐渐趋于平稳 — 这表示缓存主要用于常见的读取操作。如果您看到 get_misses 继续快速增加，而 get_hits 逐渐趋于平稳，则需要确定一下所缓存的内容是什么。您可能缓存了错误的内容。</p>
+            <p>确定缓存效率的另一种方法是查看缓存的命中率（hit ratio）。缓存命中率表示执行 <code>get</code> 的次数与错过 <code>get</code> 的次数的百分比。要确定这个百分比，需要再次运行 <code>stats</code> 命令，如清单 8 所示：</p>
+            <h2 id="id-71760af60684fc3ce303e6c1179845856b7cf895"><span class="number">4.11.</span>计算缓存命中率</h2>
+            <pre><code class="nohighlight">stats
+STAT pid 6825
+STAT uptime 540692
+STAT time 1249252262
+STAT version 1.2.6
+STAT pointer_size 32
+STAT rusage_user 0.056003
+STAT rusage_system 0.180011
+STAT curr_items 595
+STAT total_items 961
+STAT bytes 4587415
+STAT curr_connections 3
+STAT total_connections 22
+STAT connection_structures 4
+STAT cmd_get 2688
+STAT cmd_set 961
+STAT get_hits 1908
+STAT get_misses 780
+STAT evictions 0
+STAT bytes_read 5770762
+STAT bytes_written 7421373
+STAT limit_maxbytes 536870912
+STAT threads 1
+END
+</code></pre>
+            <p>现在，用 get_hits 的数值除以 cmd_gets。在本例中，您的命中率大约是 71%。在理想情况下，您可能希望得到更高的百分比 — 比率越高越好。查看统计数据并不时测量它们可以很好地判定缓存策略的效率。</p>
+            <h2 id="id-ff99671422ac4c7fa6579b862fb00d0f5dd05f3b"><span class="number">4.12.</span>常用命令</h2>
+            <p>启动/结束 <code>memcached -d -m 10 -u root -l 192.168.0.122 -p 11200 -c 256 -P /tmp/memcached.pid</code> -d 选项是启动一个守护进程， -m 是分配给Memcache使用的内存数量，单位是MB，这里是10MB -u 是运行Memcache的用户，这里是root -l 是监听的服务器IP地址，如果有多个地址的话，这里指定了服务器的IP地址192.168.0.122 -p 是设置Memcache监听的端口，这里设置了12000，最好是1024以上的端口 -c 选项是最大运行的并发连接数，默认是1024，这里设置了256，按照你服务器的负载量来设定 -P 是设置保存Memcache的pid文件 kill &lsquo;cat /tmp/memcached.pid&rsquo;</p>
+            <p>获取运行状态 <code>echo stats | nc 192.168.1.123 11200</code> <code>watch &quot;echo stats | nc 192.168.1.123 11200&quot;</code>(实时状态)</p>
+            <h1 id="spymemcached"><span class="number">5.</span>spymemcached</h1>
+            <h2 id="id-0f604bc9c05da557360d5f4f033b044603f742b9"><span class="number">5.1.</span>添加依赖：</h2>
+            <p>mvnrepository keywords: spymemcached</p>
+            <pre><code class="xml">&lt;!-- https://mvnrepository.com/artifact/net.spy/spymemcached --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;net.spy&lt;/groupId&gt;
+  &lt;artifactId&gt;spymemcached&lt;/artifactId&gt;
+  &lt;version&gt;2.12.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+            <h2 id="spring"><span class="number">5.2.</span>集成spring配置：</h2>
+            <p>applicationContext-spymemcached.xml</p>
+            <pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
+
+    &lt;!--&lt;bean id=&quot;propertyConfigurer1&quot;--&gt;
+          &lt;!--class=&quot;org.springframework.beans.factory.config.PropertyPlaceholderConfigurer&quot;&gt;--&gt;
+        &lt;!--&lt;property name=&quot;locations&quot;&gt;--&gt;
+            &lt;!--&lt;list&gt;--&gt;
+                &lt;!--&lt;value&gt;classpath:config/spymemcached.properties&lt;/value&gt;--&gt;
+            &lt;!--&lt;/list&gt;--&gt;
+        &lt;!--&lt;/property&gt;--&gt;
+        &lt;!--&lt;property name=&quot;ignoreUnresolvablePlaceholders&quot; value=&quot;true&quot;/&gt;--&gt;
+    &lt;!--&lt;/bean&gt;--&gt;
+  	&lt;!-- 引入properties文件 --&gt;
+    &lt;context:property-placeholder location=&quot;classpath:config/spymemcached.properties&quot; ignore-unresolvable=&quot;true&quot;/&gt;
+
+    &lt;!-- SpyMemcached客户端--&gt;
+    &lt;bean name=&quot;spyMemcachedClient&quot; class=&quot;net.spy.memcached.spring.MemcachedClientFactoryBean&quot;&gt;
+        &lt;property name=&quot;servers&quot; value=&quot;${memcached.url}&quot;/&gt;
+        &lt;property name=&quot;protocol&quot; value=&quot;TEXT&quot;/&gt;&lt;!-- BINARY --&gt;
+        &lt;property name=&quot;locatorType&quot; value=&quot;CONSISTENT&quot;/&gt;
+        &lt;property name=&quot;opTimeout&quot; value=&quot;1000&quot;/&gt;
+
+        &lt;property name=&quot;transcoder&quot;&gt;
+            &lt;bean class=&quot;net.spy.memcached.transcoders.SerializingTranscoder&quot;&gt;
+                &lt;property name=&quot;compressionThreshold&quot; value=&quot;1024&quot;/&gt;
+            &lt;/bean&gt;
+        &lt;/property&gt;
+
+        &lt;property name=&quot;timeoutExceptionThreshold&quot; value=&quot;1998&quot;/&gt;
+        &lt;property name=&quot;hashAlg&quot;&gt;
+            &lt;value type=&quot;net.spy.memcached.DefaultHashAlgorithm&quot;&gt;KETAMA_HASH&lt;/value&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;failureMode&quot; value=&quot;Redistribute&quot;/&gt;
+        &lt;property name=&quot;useNagleAlgorithm&quot; value=&quot;false&quot;/&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre>
+            <p>config/spymemcached.properties:</p>
+            <pre><code class="properties"># server地址，这是我是用的centos虚拟机
+memcached.url=192.168.128.130:11211 
+</code></pre>
+            <h2 id="id-8b6f6d58b48f5b7338ad824c1d15310a4a294b31"><span class="number">5.3.</span>属性详解：</h2>
+            <pre><code class="nohighlight">Servers
+一个字符串，包括由空格或逗号分隔的主机或IP地址与端口号
+Daemon
+设置IO线程的守护进程(默认为true)状态
+FailureMode
+设置故障模式(取消，重新分配，重试)，默认是重新分配
+HashAlg
+设置哈希算法(见net.spy.memcached.HashAlgorithm的值)
+InitialObservers
+设置初始连接的观察者(观察初始连接)
+LocatorType
+设置定位器类型(ARRAY_MOD,CONSISTENT),默认是ARRAY_MOD
+MaxReconnectDelay
+设置最大的连接延迟
+OpFact
+设置操作工厂
+OpQueueFactory
+设置操作队列工厂
+OpTimeout
+以毫秒为单位设置默认的操作超时时间
+Protocol
+指定要使用的协议(BINARY,TEXT),默认是TEXT
+ReadBufferSize
+设置读取的缓冲区大小
+ReadOpQueueFactory
+设置读队列工厂
+ShouldOptimize
+如果默认操作优化是不可取的，设置为false(默认为true)
+Transcoder
+设置默认的转码器(默认以net.spy.memcached.transcoders.SerializingTranscoder)
+UseNagleAlgorithm
+如果你想使用Nagle算法，设置为true
+WriteOpQueueFactory
+设置写队列工厂
+AuthDescriptor
+设置authDescriptor,在新的连接上使用身份验证
+</code></pre>
+            <h2 id="id-d2142b390a41169c81cc24f7b93b13cd64c42275"><span class="number">5.4.</span>使用示例：</h2>
+            <pre><code class="java">public class App {
+
+    private static ApplicationContext app ;
+    private static MemcachedClient spyMemcachedClient ;
+
+    public static void main(String[] args) {
+
+        app = new ClassPathXmlApplicationContext(&quot;applicationContext-spymemcahed.xml&quot; );
+        spyMemcachedClient = (MemcachedClient) app.getBean( &quot;spyMemcachedClient&quot;);
+
+        spyMemcachedClient.set(&quot;aaa&quot; , 36000, &quot;hhh/www&quot;);
+    }
+}
+</code></pre>
+            <h2 id="id-53926c3013f815ed7a83a8d781e783a2e9516c75"><span class="number">5.5.</span>方法参照：</h2>
+            <p>// todo</p>
+            <h1 id="xmemcached"><span class="number">6.</span>xmemcached</h1>
+            <h2 id="id-fdad608f7f5b64972535e93315c521244bc9dd5a"><span class="number">6.1.</span>添加依赖：</h2>
+            <p>mvnrepository keywords: xmemcached</p>
+            <pre><code class="xml">&lt;!-- https://mvnrepository.com/artifact/com.googlecode.xmemcached/xmemcached --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.googlecode.xmemcached&lt;/groupId&gt;
+    &lt;artifactId&gt;xmemcached&lt;/artifactId&gt;
+    &lt;version&gt;2.0.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+            <h2 id="id-d3a651243b7ee5e0e921847faebe52ed8f6ea60d"><span class="number">6.2.</span>集成spring配置：</h2>
+            <p>这里不再使用properties了，可自行添加</p>
+            <pre><code class="xml">&lt;bean name=&quot;memcachedClient&quot;
+      class=&quot;net.rubyeye.xmemcached.utils.XMemcachedClientFactoryBean&quot;
+      destroy-method=&quot;shutdown&quot; lazy-init=&quot;false&quot;&gt;
+  &lt;property name=&quot;servers&quot; value=&quot;127.0.0.1:11211&quot; /&gt;
+  &lt;property name=&quot;commandFactory&quot;&gt;
+    &lt;bean class=&quot;net.rubyeye.xmemcached.command.BinaryCommandFactory&quot; /&gt;
+  &lt;/property&gt;
+&lt;/bean&gt;
+</code></pre>
+            <p>## 使用示例：</p>
+            <pre><code class="java">public class App2 {
+
+    private static ApplicationContext app ;
+    private static MemcachedClient memcachedClient;
+
+    public static void main(String[] args) throws IOException, InterruptedException, MemcachedException, TimeoutException {
+        app = new ClassPathXmlApplicationContext(&quot;applicationContext-xmemcached&quot; );
+      	// 直接强转为memcachedClient
+        memcachedClient = (MemcachedClient) app.getBean(&quot;memcachedClient&quot;);
+        memcachedClient.set(&quot;xmemcached&quot;, 0, &quot;haha&quot;);
+    }
+}
+</code></pre>
+            <h2 id="id-3ab6cd01f9edffdb29869b3db4bd3db3206f394b"><span class="number">6.3.</span>不与spring集成：</h2>
+            <pre><code class="java">MemcachedClientBuilder builder = new XMemcachedClientBuilder(AddrUtil.getAddresses (“localhost:11211”));
+MemcachedClient memcachedClient = builder.build();
+</code></pre>
+            <h2 id="id-9c884493677a6d2ba2dda3e37cf2b73ba06351a7"><span class="number">6.4.</span>方法参照：</h2>
+            <p>// todo</p>
+          </div>
+          <div class="content-nav content-nav-bottom">
+          </div>
+          <div class="footer">
+            <p class="credit text-muted">Powered by <a href="https://github.com/kobo/gaiden">Gaiden</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js\jquery-2.1.1.min.js"></script>
+    <script src="js\highlight.js"></script>
+    <script src="js\application.js"></script>
+    <script src="js\my.js"></script>
+  </body>
+</html>

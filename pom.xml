@@ -17,6 +17,7 @@
         <module>mq</module>
         <module>lang3</module>
         <module>json</module>
+        <module>memcached</module>
     </modules>
 
     <properties>
