@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE games SYSTEM "games_0_1.dtd" >
+<games>
+  <game id="001" isfree="s">
+    <name>name</name>
+    <company>company</company>
+    <year>year</year>
+    <type>type</type>
+  </game>
+  <game id="001">
+    <name>name</name>
+    <company>company</company>
+    <year>year</year>
+    <type>type</type>
+  </game>
+</games>

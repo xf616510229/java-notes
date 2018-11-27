@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.org/student_1_0"
+        xmlns:tns="http://www.example.org/student_1_0"
+        elementFormDefault="qualified">
+
+    <!-- 根标记,只有1个 -->
+    <element name="students">
+        <!-- 复杂类型 -->
+        <complexType>
+            <!-- 序列 unbounded代表没有上限,控制student标记出现的次数.-->
+            <sequence minOccurs="1" maxOccurs="unbounded">
+                <!-- tns:StuType自定义一个复杂的类型 -->
+                <element name="student" type="tns:StuType"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <!-- 对自定义复杂类型StuType的详解 -->
+    <complexType name="StuType">
+        <sequence>
+            <!-- 普通元素,比DTD好处,可以指明数据类型
+                 DTD中只有两种数据类型,属性是CDATA,元素是PCDATA
+             -->
+            <element name="name" type="string"/>
+            <element name="no" type="string"/>
+            <element name="birthday" type="date"/>
+            <!-- 其中address元素又是一个自定义的复杂类型 -->
+            <element name="address" type="tns:AddrType"/>
+        </sequence>
+        <!-- student的属性 -->
+        <attribute name="id" type="int" use="required"/>
+    </complexType>
+
+    <!-- 对address元素的进一步详解 -->
+    <complexType name="AddrType">
+        <sequence>
+            <element name="province" type="string"/>
+            <element name="city" type="string"/>
+        </sequence>
+    </complexType>
+
+</schema>
+
+
+<!--
+    XML Schema 是基于 XML 的 DTD 替代者。
+    XML Schema 可描述 XML 文档的结构。
+    XML Schema 语言也可作为 XSD（XML Schema Definition）来引用。
+-->

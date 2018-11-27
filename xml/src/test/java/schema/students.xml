@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:students xmlns:tns="http://www.example.org/student_1_0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.example.org/student_1_0 shudents.xsd ">
+  <tns:student id="0">
+    <tns:name>tns:name</tns:name>
+    <tns:no>tns:no</tns:no>
+    <tns:birthday>2001-01-01</tns:birthday>
+    <tns:address>
+      <tns:province>tns:province</tns:province>
+      <tns:city>tns:city</tns:city>
+    </tns:address>
+  </tns:student>
+</tns:students>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT students (student)+>
+<!ELEMENT student (name,no,birthday,address)>
+<!ATTLIST student
+			id CDATA #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT no (#PCDATA)>
+<!ELEMENT birthday (#PCDATA)>
+<!ELEMENT address (province,city)>
+
+<!ELEMENT province (#PCDATA)>
+<!ELEMENT city (#PCDATA)>			

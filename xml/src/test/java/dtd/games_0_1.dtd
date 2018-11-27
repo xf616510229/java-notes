@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT games (game)+> <!-- 根标签games -->
+<!ELEMENT game (name, company, year, type)> <!-- 子标签game -->
+<!ATTLIST game id CDATA #REQUIRED> <!-- game标签属性id 必须 -->
+<!ATTLIST game isfree CDATA #IMPLIED> <!-- game标签属性isfree 非必须  -->
+<!ELEMENT name (#PCDATA)> <!-- name标签内的文本会被尝试解析为xml -->
+<!ELEMENT company (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+
+
+<!--
+文档类型定义（DTD）可定义合法的XML文档构建模块。它使用一系列合法的元素来定义文档的结构。
+
+
+只有 CDATA 区段（CDATA section）中的文本会被解析器忽略!!!
+
+PCDATA 
+Parsed Character Data
+
+
+CDATA
+Unparsed Character Data 不会解析的文本
+
+
+有一段XML：
+<name><first>Bill</first><last>Gates</last></name>
+
+如果设置为PCDATA，解析器会解析为
+<name>
+   <first>Bill</first>
+   <last>Gates</last>
+</name>
+
+而CDATA则会将<first>Bill</first><last>Gates</last>当作为一段文本解析出来
+通常，当文本中的内容一段HTML代码时，使用CDATA
+
+
+-->

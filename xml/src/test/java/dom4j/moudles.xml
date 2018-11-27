@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<moudles>
+	<moudle id="001">
+		<name>杨顺翔</name>
+		<age>22</age>
+		<birthday>1995-09-02</birthday>
+	</moudle>
+	<moudle id="002">
+		<name>皮卡丘</name>
+		<age>5</age>
+		<birthday>1998-05-05</birthday>
+	</moudle>
+</moudles>

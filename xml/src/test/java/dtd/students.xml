@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students SYSTEM "students.dtd" >
+<students>
+  <student id="001">
+    <name>jack</name>
+    <no>1001</no>
+    <birthday>2012-01-02</birthday>
+    <address>
+      <province>江苏省</province>
+      <city>苏州</city>
+    </address>
+  </student>
+  <student id="002">
+    <name>tom</name>
+    <no>1002</no>
+    <birthday>2013-01-02</birthday>
+    <address>
+      <province>江苏省</province>
+      <city>苏州</city>
+    </address>
+  </student>
+</students>

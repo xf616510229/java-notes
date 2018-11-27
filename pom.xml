@@ -19,6 +19,7 @@
         <module>json</module>
         <module>memcached</module>
         <module>execl</module>
+        <module>xml</module>
     </modules>
 
     <properties>
