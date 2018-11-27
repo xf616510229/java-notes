@@ -5,10 +5,9 @@ public class ClassicUse {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private Integer i;
-    private Integer oldI;
 
     public void setTemperature(Integer temperature) {
-        oldI = i;
+        Integer oldI = i;
         i = temperature;
         logger.debug("Temperature set to {}. OldTemperature was {}", i, oldI);
         if (temperature > 50) {
