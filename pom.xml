@@ -20,6 +20,7 @@
         <module>memcached</module>
         <module>execl</module>
         <module>xml</module>
+        <module>zip</module>
     </modules>
 
     <properties>
