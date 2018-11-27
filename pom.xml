@@ -23,6 +23,11 @@
         <module>zip</module>
     </modules>
 
+    <url>https://github.com/xf616510229/java-notes</url>
+    <description>
+        java工作学习中遇到的技术点
+    </description>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
