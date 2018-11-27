@@ -12,6 +12,7 @@
         <module>mail</module>
         <module>timed-task</module>
         <module>log</module>
+        <module>ftp</module>
     </modules>
 
     <properties>
