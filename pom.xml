@@ -13,6 +13,7 @@
         <module>timed-task</module>
         <module>log</module>
         <module>ftp</module>
+        <module>redis</module>
     </modules>
 
     <properties>
