@@ -16,6 +16,7 @@
         <module>redis</module>
         <module>mq</module>
         <module>lang3</module>
+        <module>json</module>
     </modules>
 
     <properties>
