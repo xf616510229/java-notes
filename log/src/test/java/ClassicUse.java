@@ -16,8 +16,8 @@ public class ClassicUse {
     }
 
     public static void main(String[] args) {
-        ClassicUse useage = new ClassicUse();
-        useage.setTemperature(50);
-        useage.setTemperature(51);
+        ClassicUse useAge = new ClassicUse();
+        useAge.setTemperature(50);
+        useAge.setTemperature(51);
     }
 }
