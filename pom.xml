@@ -15,6 +15,7 @@
         <module>ftp</module>
         <module>redis</module>
         <module>mq</module>
+        <module>lang3</module>
     </modules>
 
     <properties>
