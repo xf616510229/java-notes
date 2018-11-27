@@ -11,6 +11,7 @@
     <modules>
         <module>mail</module>
         <module>timed-task</module>
+        <module>log</module>
     </modules>
 
     <properties>
