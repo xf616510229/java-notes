@@ -21,6 +21,9 @@
         <module>execl</module>
         <module>xml</module>
         <module>zip</module>
+        <module>exam</module>
+        <module>netty</module>
+        <module>socket</module>
     </modules>
 
     <url>https://github.com/xf616510229/java-notes</url>
