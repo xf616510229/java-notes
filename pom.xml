@@ -25,6 +25,7 @@
         <module>netty</module>
         <module>socket</module>
         <module>serializable</module>
+        <module>rmi</module>
     </modules>
 
     <url>https://github.com/xf616510229/java-notes</url>
