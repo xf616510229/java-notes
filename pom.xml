@@ -26,6 +26,7 @@
         <module>socket</module>
         <module>serializable</module>
         <module>rmi</module>
+        <module>webservice</module>
     </modules>
 
     <url>https://github.com/xf616510229/java-notes</url>
