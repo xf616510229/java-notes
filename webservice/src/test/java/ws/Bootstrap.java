@@ -1,7 +1,10 @@
-package ws.server;
+package ws;
 
 import javax.xml.ws.Endpoint;
 
+/**
+ * 调用请查看webservice-client项目
+ */
 public class Bootstrap {
 
     public static void main(String[] args) {
