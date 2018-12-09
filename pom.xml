@@ -27,6 +27,7 @@
         <module>serializable</module>
         <module>rmi</module>
         <module>webservice</module>
+        <module>webservice-client</module>
     </modules>
 
     <url>https://github.com/xf616510229/java-notes</url>
