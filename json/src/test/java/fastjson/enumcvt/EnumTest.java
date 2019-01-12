@@ -63,6 +63,26 @@ public class EnumTest {
     }
 
     /**
+     * 【重点】假设需要使用 code 作为枚举 序列化 和 反序列化的值
+     * 如果每个枚举都重写 toString 方法，过于繁琐，
+     * 可以自定义fastjson 序列化器和反序列化器
+     * 并使用 @JsonField 的 serializeUsing 和 deserializeUsing 属性指定序列化反序列化器实现类
+     */
+    @Test
+    public void enumToJsonFiledCode() {
+        TestJavaBean testJavaBean = new TestJavaBean();
+        testJavaBean.setName("张三");
+        testJavaBean.setAge(100);
+        testJavaBean.setResultEnum(ResultEnum.FAIL);
+
+        String json = JSON.toJSONString(testJavaBean);
+        System.out.println(json);
+
+        TestJavaBean newTestJavaBean = JSON.parseObject(json, TestJavaBean.class);
+        System.out.println(newTestJavaBean);
+    }
+
+    /**
      * 将enum作为javaBean序列化为json
      * {"code":"200","msg":"success"}
      */

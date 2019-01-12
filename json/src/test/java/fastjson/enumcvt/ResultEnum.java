@@ -1,6 +1,6 @@
 package fastjson.enumcvt;
 
-public enum ResultEnum {
+public enum ResultEnum implements BaseEnum {
 
     SUCCESS("200", "success"),
     FAIL("400", "fail"),
@@ -8,11 +8,11 @@ public enum ResultEnum {
 
     private String code;
 
-    private String msg;
+    private String message;
 
-    ResultEnum(String code, String msg) {
+    ResultEnum(String code, String message) {
         this.code = code;
-        this.msg = msg;
+        this.message = message;
     }
 
     public String getCode() {
@@ -23,12 +23,12 @@ public enum ResultEnum {
         this.code = code;
     }
 
-    public String getMsg() {
-        return msg;
+    public String getMessage() {
+        return message;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     @Override
