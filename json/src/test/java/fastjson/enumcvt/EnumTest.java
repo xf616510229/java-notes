@@ -41,7 +41,7 @@ public class EnumTest {
 
     /**
      * 修改fastjson全局配置
-     * 
+     * <p>
      * |= 使用该配置
      * &= ~  不使用该配置
      */
@@ -83,6 +83,21 @@ public class EnumTest {
     }
 
     /**
+     * 解决上面每个enum都要打注解，很影响代码整洁度
+     * 但是每有一个注解需要处理，就要加入config，很不方便
+     */
+    @Deprecated
+    @Test
+    public void enumToJsonFieldCode2() {
+        SerializeConfig serializeConfig = new SerializeConfig();
+        serializeConfig.put(BaseEnum.class, new ResultEnumSerializer());
+        
+        // 注意，这里写BaseEnum 无效
+        String s = JSON.toJSONString(ResultEnum.FAIL, serializeConfig);
+        System.out.println(s);
+    }
+
+    /**
      * 将enum作为javaBean序列化为json
      * {"code":"200","msg":"success"}
      */
@@ -98,7 +113,7 @@ public class EnumTest {
     /**
      * 方法2
      * 同上面相同，但是是将注解加到枚举上
-     * 
+     * <p>
      * 1.2.24 以后支持
      */
     @Test
@@ -108,7 +123,7 @@ public class EnumTest {
     }
 
     /**
-     * 方法3 
+     * 方法3
      * 直接修改 全局配置，将指定枚举类进行javaBean形式的序列化
      * 好处：不用修改枚举类
      * 坏处：全局配置
