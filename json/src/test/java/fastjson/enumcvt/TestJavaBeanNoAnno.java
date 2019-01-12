@@ -2,12 +2,11 @@ package fastjson.enumcvt;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
-public class TestJavaBean {
+public class TestJavaBeanNoAnno {
 
     private String name;
     private Integer age;
     
-    @JSONField(serializeUsing = ResultEnumSerializer.class, deserializeUsing = ResultEnumSerializer.class)
     private ResultEnum resultEnum;
 
     public String getName() {

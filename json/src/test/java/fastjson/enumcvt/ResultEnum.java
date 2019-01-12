@@ -1,5 +1,8 @@
 package fastjson.enumcvt;
 
+import com.alibaba.fastjson.annotation.JSONType;
+
+//@JSONType(serializer = ResultEnumSerializer.class, deserializer = ResultEnumSerializer.class)
 public enum ResultEnum implements BaseEnum {
 
     SUCCESS("200", "success"),

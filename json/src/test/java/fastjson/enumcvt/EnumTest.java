@@ -1,9 +1,15 @@
 package fastjson.enumcvt;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.PropertyFilter;
 import com.alibaba.fastjson.serializer.SerializeConfig;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.alibaba.fastjson.serializer.ValueFilter;
+import com.alibaba.fastjson.support.config.FastJsonConfig;
+import fastjson.EnumUtil;
 import org.junit.Test;
+
+import javax.xml.transform.Result;
 
 public class EnumTest {
 
@@ -67,6 +73,11 @@ public class EnumTest {
      * 如果每个枚举都重写 toString 方法，过于繁琐，
      * 可以自定义fastjson 序列化器和反序列化器
      * 并使用 @JsonField 的 serializeUsing 和 deserializeUsing 属性指定序列化反序列化器实现类
+     * 
+     * 类似的做法，也可以在枚举类型使用 
+     * @ JSONType(serializer = ResultEnumSerializer.class, deserializer = ResultEnumSerializer.class)
+     * 指定序列化器和反序列化器
+     * 同样不好用，每个枚举都要添加
      */
     @Test
     public void enumToJsonFiledCode() {
@@ -95,6 +106,43 @@ public class EnumTest {
         // 注意，这里写BaseEnum 无效
         String s = JSON.toJSONString(ResultEnum.FAIL, serializeConfig);
         System.out.println(s);
+    }
+
+    /**
+     * 【重点】 解决方案, 只有序列化有效 
+     * 使用JsonFilter 对值进行修改
+     */
+    @Test
+    public void enumToJsonFieldCode3() {
+        ValueFilter valueFilter = (object, name, value) -> {
+            if (value instanceof Enum && value instanceof BaseEnum) {
+                return ((BaseEnum) value).getCode();
+            }
+            return value;
+        };
+        TestJavaBeanNoAnno testJavaBean = new TestJavaBeanNoAnno();
+        testJavaBean.setName("里昂");
+        testJavaBean.setAge(50);
+        testJavaBean.setResultEnum(ResultEnum.SUCCESS);
+        String s = JSON.toJSONString(testJavaBean, valueFilter);
+        System.out.println(s);
+
+        TestJavaBeanNoAnno testJavaBeanNoAnno = JSON.parseObject(s, TestJavaBeanNoAnno.class);
+        System.out.println(testJavaBeanNoAnno);
+    }
+
+    /**
+     * 【重点】 终极解决方案  配合 enumToJsonFieldCode3 使用
+     */
+    @Test
+    public void enumToJsonFieldCode4() {
+        String json = "{\"age\":10,\"name\":\"里斯\",\"resultEnum\":\"200\"}";
+        TestJavaBeanNoAnno o = JSON.parseObject(json, TestJavaBeanNoAnno.class, new MyParseConfig());
+        System.out.println(o);
+        
+        // 全局配置parseConfig  spring boot 环境
+        //FastJsonConfig.setParserConfig(new MyParseConfig());
+        
     }
 
     /**
