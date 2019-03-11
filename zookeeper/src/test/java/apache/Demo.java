@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
@@ -108,6 +109,14 @@ public class Demo implements Watcher {
         Thread.sleep(2000); // 异步操作，需要睡眠
     }
 
+    /**
+     * 获取指定节点下的子节点
+     */
+    @Test
+    public void getChildNode() throws KeeperException, InterruptedException  {
+        List<String> children = zooKeeper.getChildren("/", true);
+        System.out.println(children);
+    }
 
 }
 
