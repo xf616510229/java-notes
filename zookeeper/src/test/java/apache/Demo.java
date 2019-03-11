@@ -5,6 +5,7 @@ import org.apache.zookeeper.data.Stat;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import util.ConnectionURL;
 
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -16,7 +17,6 @@ import java.util.concurrent.TimeUnit;
  */
 public class Demo implements Watcher {
 
-    private final static String CONNECTION_STRING = "127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183";
 
     ZooKeeper zooKeeper = null;
 
@@ -63,7 +63,7 @@ public class Demo implements Watcher {
         // 参1：连接串，集群的所有串
         // 参2：session过期事件
         // 参3：watch，监控机制
-        zooKeeper = new ZooKeeper(CONNECTION_STRING, 5000, this);
+        zooKeeper = new ZooKeeper(ConnectionURL.CONNECTION_STRING, 5000, this);
         countDownLatch.await();
         System.out.println("zookeeper客户端连接状态为：" + zooKeeper.getState());
     }

@@ -10,13 +10,14 @@ import org.junit.Test;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import static util.ConnectionURL.CONNECTION_STRING;
+
 /**
  * @author Feahters
  * @date 2019/3/11
  */
 public class Demo {
     
-    private final static String CONNECTION_STRING = "127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183";
 
     ZkClient zkClient = null;
     
