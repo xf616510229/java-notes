@@ -3,14 +3,11 @@ package apache;
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.ACL;
 import org.apache.zookeeper.data.Id;
-import org.apache.zookeeper.data.Stat;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
 
 import static util.ConnectionURL.CONNECTION_STRING;
 
