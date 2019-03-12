@@ -77,12 +77,12 @@ public class MasterSelectorService implements IZkDataListener {
         } catch (ZkNodeExistsException e) { // 如果抛出ZkNodeExistsException，说明节点已经存在，master已经选举成功
             // 为了确保master确实已经选举成功，将会再查询一次
             if (zkClient.readData(MASTER_PATH, true) == null) { // 如果没有选举成功，重新选举一次
-                choseMaster();
                 try {
                     TimeUnit.MILLISECONDS.sleep(500);
                 } catch (InterruptedException e1) {
                     e1.printStackTrace();
                 }
+                choseMaster();
             }
         }
     }
