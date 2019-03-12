@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * @author Feahters
  * @date 2019/3/12
  */
-public class Recipes {
+public class MasterSelector {
     private CuratorFramework curatorFramework;
 
     @Before
