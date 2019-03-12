@@ -31,8 +31,8 @@ public class MasterSelector {
 
     /**
      * 选举：
-     * LeaderLatch
-     * LeaderSelector
+     * LeaderLatch 阻塞，抢不到master的将会一直阻塞等待，只写一个master
+     * LeaderSelector  每个应用都写一个临时节点，最小的节点将会获取选举的优先权
      */
     @Test
     public void masterSelect() {
