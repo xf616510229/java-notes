@@ -29,7 +29,7 @@ public class Demo {
     
     @Test
     public void createNode() {
-        zkClient.create("/zkClient", "1".getBytes(), CreateMode.PERSISTENT); // 创建持久化节点
+        zkClient.create("/zkClient", "1", CreateMode.PERSISTENT); // 创建持久化节点
         zkClient.createPersistent("/zkClient/name", "zk"); // 创建持久化节点
         zkClient.createEphemeral("/zkClient/age", 18); // 创建临时节点
         zkClient.createPersistent("/parent/son1/son1-1/son1-1-1", true); // 可以递归创建父节点, 参2决定
@@ -46,6 +46,12 @@ public class Demo {
         zkClient.writeData("/zkClient", "111");
     }
 
+    @Test
+    public void getDate() {
+        Object o = zkClient.readData("/zkClient");
+        System.out.println(o.toString());
+    }
+    
     @Test
     public void watch() throws InterruptedException {
         // 订阅节点data发生变化的watch
