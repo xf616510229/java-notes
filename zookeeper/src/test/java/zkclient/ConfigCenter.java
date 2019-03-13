@@ -10,7 +10,7 @@ import java.io.*;
 
 /**
  * 配置中心实现
- *
+ *    粗粒度，以文件名为key，文件内容为data，放入至zookeeper中，客户端监控data数据是否发生变化
  * @author Feahters
  * @date 2019/3/12
  */
