@@ -37,8 +37,7 @@ public class JmsTopicPersistentReceiver {
             e.printStackTrace();
         } finally {
             if (connection != null) {
-                try {
-                    connection.close();
+                try { connection.close();
                 } catch (JMSException e) {
                     e.printStackTrace();
                 }
