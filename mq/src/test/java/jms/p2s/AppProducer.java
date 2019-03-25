@@ -1,49 +1,61 @@
-package jms.topic;
+package jms.p2s;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
 
 /**
- * AppConsumer
- * jms消息消费者 队列模型
+ * AppProducer
+ * jms 消息生产者 队列模型
  * <p>
  *
  * @author Feathers
- * @date 2018-05-27 20:36
+ * @date 2018-05-27 20:11
  */
-public class AppConsumer {
+public class AppProducer {
+
     /*连接地址，默认端口61616， activemq5版本以上，url 应该填写tcp://localhost:61616?jms.useAsyncSend=true*/
     //private static final String URL = "tcp://192.168.0.14:61616";
     private static final String URL = "tcp://127.0.0.1:61616";
-    private static final String TOPIC_NAME = "topic-test";
+    private static final String TOPIC_NAME = "topic-first";
 
-    public static void main(String[] args) throws JMSException {
+    public static void main(String[] args) {
         //1. 创建连接工厂
         ConnectionFactory cf = new ActiveMQConnectionFactory(URL);
         //2. 使用工厂创建连接对象
-        Connection c = cf.createConnection();
+        Connection c = null;
+        try {
+            c = cf.createConnection();
+        
         //3. 启动连接
         c.start();
         //4. 创建会话 参1：是否使用事务
         Session session = c.createSession(false, Session.AUTO_ACKNOWLEDGE);
         //5. 创建一个目标（消息发布和接收的地点，包含队列和主题）
         Destination destination = session.createTopic(TOPIC_NAME);
-        //6. 创建一个消费者
-        MessageConsumer consumer = session.createConsumer(destination);
-        //7. 创建一个监听器，用于监听消息队列发送的消息
-        consumer.setMessageListener(new MessageListener() {
-            @Override
-            public void onMessage(Message message) {
-                TextMessage textMessage = (TextMessage) message;
+        //6. 创建一个生产者
+        MessageProducer producer = session.createProducer(destination);
+
+        for (int i = 0; i < 100; i++) {
+            // 准备消息
+            TextMessage tx = session.createTextMessage("我是消息 " + i);
+            // 发送消息
+            producer.send(tx);
+            System.out.println("发送希消息" + tx.getText());
+        }
+        //关闭连接
+        producer.close();
+        
+        } catch (JMSException e) {
+            e.printStackTrace();
+        } finally {
+            if (c!=null) {
                 try {
-                    System.out.println("接收到消息：" + textMessage.getText());
+                    c.close();
                 } catch (JMSException e) {
                     e.printStackTrace();
                 }
             }
-        });
-        // 关闭连接，需要在程序退出时关闭，关闭过快，则有可能接收不到，应用程序就停止了
-        //consumer.close();
+        }
     }
 }
