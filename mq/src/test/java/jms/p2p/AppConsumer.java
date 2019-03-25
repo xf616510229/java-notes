@@ -7,6 +7,7 @@ import javax.jms.*;
 /**
  * AppConsumer
  * jms消息消费者 point-to-point 队列模型
+ * 非事务性会话，无需commit
  * <p>
  *
  * @author Feathers
