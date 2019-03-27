@@ -18,7 +18,9 @@ public class BinarySearch {
         System.out.println(Arrays.toString(target));
 
         int i = binarySearchIndexByEleValue(target, 89);
+        int j = binarySearchIndexByEleValueUseRecursive(target, 0, target.length - 1, 89);
         System.out.println(i);
+        System.out.println(j);
     }
 
     private static int[] sortArray(int[] target) {
@@ -50,5 +52,19 @@ public class BinarySearch {
             }
         }
         return result;
+    }
+
+    private static int binarySearchIndexByEleValueUseRecursive(int[] arr, int start, int end, int targetValue) {
+        if (start > end) {
+            return -1;
+        }
+        int middleIndex = (start + end) / 2;
+        if (targetValue > arr[middleIndex]) {
+            return binarySearchIndexByEleValueUseRecursive(arr, middleIndex + 1, end, targetValue);
+        } else if (targetValue < arr[middleIndex]) {
+            return binarySearchIndexByEleValueUseRecursive(arr, start, middleIndex - 1, targetValue);
+        } else {
+            return middleIndex;
+        }
     }
 }
